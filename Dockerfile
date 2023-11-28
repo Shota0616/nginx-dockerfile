@@ -3,8 +3,8 @@
 FROM nginx:1.24.0
 
 # コンテナに入って操作するときvim使いたいので、aptでインストールしておく
-RUN apt update \
-    apt install -y vim
+RUN apt update
+RUN apt install -y vim
 
 # ホスト側で用意したnginx設定ファイルをコンテナ側にコピー
 COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
